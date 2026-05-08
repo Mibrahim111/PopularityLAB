@@ -1,0 +1,52 @@
+{
+  "top_features": [
+    {
+      "feature": "num__SteamSpyOwners_div_SteamSpyPlayersEstimate",
+      "importance": 249.04941215691917
+    },
+    {
+      "feature": "num__SteamSpyPlayersEstimate",
+      "importance": 193.16481473168335
+    },
+    {
+      "feature": "num__ShortDescrip_length",
+      "importance": 129.05113429755713
+    },
+    {
+      "feature": "num__AchievementCount",
+      "importance": 123.8336331612598
+    },
+    {
+      "feature": "num__SteamSpyOwners",
+      "importance": 117.06552493286364
+    },
+    {
+      "feature": "num__ScreenshotCount",
+      "importance": 114.67988101589866
+    },
+    {
+      "feature": "num__Metacritic",
+      "importance": 101.17364780935019
+    },
+    {
+      "feature": "num__DetailedDescrip_word_count",
+      "importance": 86.39677356680004
+    },
+    {
+      "feature": "num__SteamSpyOwners_x_SteamSpyPlayersEstimate",
+      "importance": 81.09574321825066
+    },
+    {
+      "feature": "num__total_text_length",
+      "importance": 78.3581257916153
+    },
+    {
+      "feature": "num__AboutText_length",
+      "importance": 77.03548847525245
+    },
+    {
+      "feature": "num__ShortDescrip_word_count",
+      "importance": 76.47820418407642
+    }
+  ]
+}

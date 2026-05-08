@@ -38,16 +38,7 @@ tests/
 utils/
 venv/
 catboost_info/
-ml/
-ml/artifacts/
-ml/artifacts/classification/
-ml/artifacts/regression/
-ml/artifacts/classification/model.pkl
-ml/artifacts/regression/model.pkl
-ml/artifacts/classification/model.pkl.pkl
-ml/artifacts/regression/model.pkl.pkl
-ml/artifacts/classification/model.pkl.pkl.pkl
-ml/artifacts/regression/model.pkl.pkl.pkl
+ml/old
 .pytest_cache/
 .vscode/
 # .env
