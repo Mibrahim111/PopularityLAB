@@ -1,0 +1,60 @@
+.csv
+.pyc
+
+_pycache_/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+*.pyzwz
+*.pyzwzw
+specs/
+
+backend/__pycache__/
+backend/_pycache_/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/*.pyw
+backend/*.pyz
+backend/*.pywz
+backend/*.pyzw
+backend/*.pyzwz
+backend/*.pyzwzw
+
+clean_data/
+data/
+docs/
+models/
+notebooks/
+reports/
+specs/
+src/
+tests/
+utils/
+venv/
+catboost_info/
+ml/
+ml/artifacts/
+ml/artifacts/classification/
+ml/artifacts/regression/
+ml/artifacts/classification/model.pkl
+ml/artifacts/regression/model.pkl
+ml/artifacts/classification/model.pkl.pkl
+ml/artifacts/regression/model.pkl.pkl
+ml/artifacts/classification/model.pkl.pkl.pkl
+ml/artifacts/regression/model.pkl.pkl.pkl
+.pytest_cache/
+.vscode/
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+# .env.development
+# .env.test
+# .env.production
