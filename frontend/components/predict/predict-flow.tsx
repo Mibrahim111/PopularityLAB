@@ -53,9 +53,7 @@ export function PredictFlow({ mode }: { mode: PredictionMode }) {
           </span>
         </h1>
         <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-          Inputs mirror backend <span className="font-mono">FeatureInput</span>. Submission hits{" "}
-          <span className="font-mono">POST /predict</span> with no mocks.
-        </p>
+          Describe the game you have in mind and we will use our models to get you a prediction <span className="font-mono"></span> </p>
       </div>
 
       <FormProvider {...methods}>
