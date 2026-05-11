@@ -8,7 +8,7 @@ import pandas as pd
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 
-from save_reg_preprocessor import RegressionPreprocessor, TARGET_COLUMN, engineer_features
+from test.save_reg_preprocessor import RegressionPreprocessor, TARGET_COLUMN, engineer_features
 
 
 def evaluate_regression(

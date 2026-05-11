@@ -112,7 +112,7 @@ def _build_preprocessor(X: pd.DataFrame) -> ColumnTransformer:
     )
 
 def _build_reference_stacking_model() -> tuple[StackingRegressor, dict[str, dict[str, float | int | str]]]:
-    # Mirrors the ensemble notebook's reference stacking setup.
+    
     xgb_params = {
         "n_estimators": 800,
         "max_depth": 9,
