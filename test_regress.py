@@ -11,10 +11,10 @@ regression_dir = Path("ml/artifacts/regression")
 regression_model_path = regression_dir / "stacking_reg.pkl"
 regression_preprocessor_path = regression_dir / "reg_preprocessor.pkl"
 
-data_path = Path("test_data_reg.csv")
+data_path = Path("")
 
-regression_preprocessor = joblib.load(regression_preprocessor_path)
-stacking_reg = joblib.load(regression_model_path)
+preprocessor = joblib.load(regression_preprocessor_path)
+model = joblib.load(regression_model_path)
 
 df = pd.read_csv(data_path)
 
@@ -31,9 +31,9 @@ else:
     print("NO TARGET")
 
 
-X_test_transformed = regression_preprocessor.transform(df_engineered)
+X_test_transformed = preprocessor.transform(df_engineered)
 
-y_pred = stacking_reg.predict(X_test_transformed)
+y_pred = model.predict(X_test_transformed)
 
 
 if y_true is not None:

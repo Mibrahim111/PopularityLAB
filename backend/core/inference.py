@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from classification import engineer_features as classify_engineer_features
-from save_reg_preprocessor import RegressionPreprocessor, engineer_features as reg_engineer_features
+from test.save_reg_preprocessor import RegressionPreprocessor, engineer_features as reg_engineer_features
 
 LOGGER = logging.getLogger(__name__)
 

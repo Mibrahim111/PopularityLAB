@@ -12,7 +12,7 @@ classification_preprocessor_path = classification_dir / "preprocessor.pkl"
 classification_label_encoder_path = classification_dir / "label_encoder.pkl"
 classification_model_path = classification_dir / "stacking_clf.pkl"
 
-data_path = Path("test_data_class.csv")
+data_path = Path("") 
 
 preprocessor = joblib.load(classification_preprocessor_path)
 label_encoder = joblib.load(classification_label_encoder_path)
