@@ -45,9 +45,6 @@ export default function RootLayout({
                 <Link href="/predict?mode=regression" className="transition-colors hover:text-foreground">
                   Regress
                 </Link>
-                <Link href="/whatif" className="transition-colors hover:text-foreground">
-                  What-If
-                </Link>
               </nav>
             </div>
           </header>

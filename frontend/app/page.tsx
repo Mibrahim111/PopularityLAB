@@ -18,46 +18,34 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <Link href="/predict?mode=classification" className="group block h-full">
-          <Card className="h-full border-border bg-card transition-colors group-hover:border-primary/40">
-            <CardHeader>
-              <CardTitle className="font-mono text-base">Game Popularity Tier</CardTitle>
-              <CardDescription>Three-band popularity tiers with calibrated probabilities.</CardDescription>
-            </CardHeader>
-            <CardContent className="font-mono text-[11px] text-muted-foreground">
-              Run Classification Pipeline
-            </CardContent>
-          </Card>
-        </Link>
+      <div className="flex justify-center">
+        <div className="grid gap-6 md:grid-cols-2 max-w-4xl">
+          <Link href="/predict?mode=classification" className="group block h-full">
+            <Card className="h-full border-border bg-card transition-colors group-hover:border-primary/40">
+              <CardHeader>
+                <CardTitle className="font-mono text-base">Game Popularity Tier</CardTitle>
+                <CardDescription>Three-band popularity tiers with calibrated probabilities.</CardDescription>
+              </CardHeader>
+              <CardContent className="font-mono text-[11px] text-muted-foreground">
+                Run Classification Pipeline
+              </CardContent>
+            </Card>
+          </Link>
 
-        <Link href="/predict?mode=regression" className="group block h-full">
-          <Card className="h-full border-border bg-card transition-colors group-hover:border-primary/40">
-            <CardHeader>
-              <CardTitle className="font-mono text-base">Game Recommendation Score</CardTitle>
-              <CardDescription>
-                See how likely will a game go viral and get a score.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="font-mono text-[11px] text-muted-foreground">
-              Run Regression Pipeline
-            </CardContent>
-          </Card>
-        </Link>
-
-        <Link href="/whatif" className="group block h-full">
-          <Card className="h-full border-border bg-card transition-colors group-hover:border-primary/40">
-            <CardHeader>
-              <CardTitle className="font-mono text-base">What-if</CardTitle>
-              <CardDescription>
-                Clone a baseline, stress key leverage fields, and diff predictions instantly.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="font-mono text-[11px] text-muted-foreground">
-              POST /predict/whatif
-            </CardContent>
-          </Card>
-        </Link>
+          <Link href="/predict?mode=regression" className="group block h-full">
+            <Card className="h-full border-border bg-card transition-colors group-hover:border-primary/40">
+              <CardHeader>
+                <CardTitle className="font-mono text-base">Game Recommendation Score</CardTitle>
+                <CardDescription>
+                  See how likely will a game go viral and get a score.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="font-mono text-[11px] text-muted-foreground">
+                Run Regression Pipeline
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -10,28 +10,86 @@ import {
 } from "@/lib/features";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useFormContext } from "react-hook-form";
+import { parseTxtInput } from "@/lib/parseInput";
 import type { FeatureInput } from "@/lib/types";
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
 
 export function PredictionFormFields() {
   const grouped = fieldsGroupedBySection();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const methods = useFormContext<FeatureInput>();
+
+  async function handleFileUpload(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    try {
+      const content = await file.text();
+      const parsed = parseTxtInput(content);
+      
+      // Update form with parsed values
+      methods.reset(parsed as FeatureInput, { keepValues: false });
+    } catch (error) {
+      console.error("Failed to parse file:", error);
+      alert(`Failed to parse file: ${error instanceof Error ? error.message : "Unknown error"}`);
+    }
+
+    // Reset file input
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  }
 
   return (
     <div className="space-y-6">
-      {FEATURE_SECTIONS.map((section) => (
-        <Card key={section.id}>
-          <CardHeader>
-            <CardTitle>{section.title}</CardTitle>
-            <CardDescription>{section.description}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 md:grid-cols-2">
-              {grouped[section.id].map((meta) => (
-                <FeatureRow key={meta.key} meta={meta} />
-              ))}
+      <Card>
+        <CardHeader>
+          <CardTitle>Load from File</CardTitle>
+          <CardDescription>Upload a .txt file with game data to populate the form</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <Input
+                ref={fileInputRef}
+                type="file"
+                accept=".txt"
+                onChange={handleFileUpload}
+                className="flex-1"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => fileInputRef.current?.click()}
+              >
+                Browse
+              </Button>
             </div>
-          </CardContent>
-        </Card>
-      ))}
+            <p className="text-xs text-muted-foreground">
+              Format: key: value (one per line, e.g., Name: My Game, ReleaseDate: 2020-01-01)
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="space-y-6">
+        {FEATURE_SECTIONS.map((section) => (
+          <Card key={section.id}>
+            <CardHeader>
+              <CardTitle>{section.title}</CardTitle>
+              <CardDescription>{section.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 md:grid-cols-2">
+                {grouped[section.id].map((meta) => (
+                  <FeatureRow key={meta.key} meta={meta} />
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }
